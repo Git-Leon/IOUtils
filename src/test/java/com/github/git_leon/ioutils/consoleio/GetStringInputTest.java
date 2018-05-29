@@ -1,10 +1,10 @@
-package com.github.git_leon.ioutils.console;
+package com.github.git_leon.ioutils.consoleio;
 
 /**
  * @author leon on 5/28/18.
  */
 
-import com.github.git_leon.ioutils.ConsoleIO;
+import com.github.git_leon.ioutils.SimpleIO;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -29,7 +29,7 @@ public class GetStringInputTest  {
         String input = "11";
         String expected = input;
 
-        ConsoleIO console = ConsoleTestUtils.getConsoleWithBufferedInput(input, output);
+        SimpleIO console = SimpleIOTestUtils.getConsoleWithBufferedInput(input, output);
 
         // When
         String actual = console.getStringInput("Input a string");
@@ -44,7 +44,7 @@ public class GetStringInputTest  {
         String input = "The Quick Brown Fox";
         String expected = input;
 
-        ConsoleIO console = ConsoleTestUtils.getConsoleWithBufferedInput(input, output);
+        SimpleIO console = SimpleIOTestUtils.getConsoleWithBufferedInput(input, output);
 
         // When
         String actual = console.getStringInput("Input a string");
@@ -59,7 +59,7 @@ public class GetStringInputTest  {
         String input = "Jumps Over The Lazy Dog";
         String expected = input;
 
-        ConsoleIO console = ConsoleTestUtils.getConsoleWithBufferedInput(input, output);
+        SimpleIO console = SimpleIOTestUtils.getConsoleWithBufferedInput(input, output);
 
         // When
         String actual = console.getStringInput("Input a string");

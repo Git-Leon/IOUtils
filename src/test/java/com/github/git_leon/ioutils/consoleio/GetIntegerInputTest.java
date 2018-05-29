@@ -1,6 +1,6 @@
-package com.github.git_leon.ioutils.console;
+package com.github.git_leon.ioutils.consoleio;
 
-import com.github.git_leon.ioutils.ConsoleIO;
+import com.github.git_leon.ioutils.SimpleIO;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -25,7 +25,7 @@ public class GetIntegerInputTest {
         Integer input = 11;
         Integer expected = input;
 
-        ConsoleIO console = ConsoleTestUtils.getConsoleWithBufferedInput(input, output);
+        SimpleIO console = SimpleIOTestUtils.getConsoleWithBufferedInput(input, output);
 
         // When
         Integer actual = console.getIntegerInput("Input an integer");
@@ -40,7 +40,7 @@ public class GetIntegerInputTest {
         Integer input = 12;
         Integer expected = input;
 
-        ConsoleIO console = ConsoleTestUtils.getConsoleWithBufferedInput(input, output);
+        SimpleIO console = SimpleIOTestUtils.getConsoleWithBufferedInput(input, output);
 
         // When
         Integer actual = console.getIntegerInput("Input an integer");
@@ -55,7 +55,7 @@ public class GetIntegerInputTest {
         Integer input = 15;
         Integer expected = input;
 
-        ConsoleIO console = ConsoleTestUtils.getConsoleWithBufferedInput(input, output);
+        SimpleIO console = SimpleIOTestUtils.getConsoleWithBufferedInput(input, output);
 
         // When
         Integer actual = console.getIntegerInput("Input an integer");

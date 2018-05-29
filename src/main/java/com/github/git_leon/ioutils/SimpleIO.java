@@ -7,11 +7,15 @@ import java.util.Scanner;
 /**
  * @author leon on 5/28/18.
  */
-public class ConsoleIO {
+public class SimpleIO {
     private final Scanner input;
     private final PrintStream output;
 
-    public ConsoleIO(InputStream in, PrintStream out) {
+    public SimpleIO() {
+        this(System.in, System.out);
+    }
+
+    public SimpleIO(InputStream in, PrintStream out) {
         this.input = new Scanner(in);
         this.output = out;
     }
@@ -29,15 +33,15 @@ public class ConsoleIO {
         return input.nextLine();
     }
 
-    public Double getDoubleInput(String prompt, Object... args) {
+    public Float getFloatInput(String prompt, Object... args) {
         String stringInput = getStringInput(prompt, args);
         try {
-            Double doubleInput = Double.parseDouble(stringInput);
-            return doubleInput;
+            Float floatInput = Float.parseFloat(stringInput);
+            return floatInput;
         } catch (NumberFormatException nfe) {
             println("[ %s ] is an invalid user input!", stringInput);
             println("Try inputting a numeric value!");
-            return getDoubleInput(prompt, args);
+            return getFloatInput(prompt, args);
         }
     }
 
@@ -55,5 +59,9 @@ public class ConsoleIO {
 
     public Integer getIntegerInput(String prompt, Object... args) {
         return getLongInput(prompt, args).intValue();
+    }
+
+    public Double getDoubleInput(String prompt, Object... args) {
+        return getFloatInput(prompt, args).doubleValue();
     }
 }
