@@ -25,8 +25,8 @@ public class SimpleFileReader {
             throw new Error(e);
         }
 
-        while (fileScanner.hasNext()) {
-            lines.add(fileScanner.next());
+        while (fileScanner.hasNextLine()) {
+            lines.add(fileScanner.nextLine());
         }
         fileScanner.close();
     }

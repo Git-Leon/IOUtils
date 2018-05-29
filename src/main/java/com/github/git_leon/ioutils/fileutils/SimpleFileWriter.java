@@ -46,6 +46,7 @@ public class SimpleFileWriter {
     public void writeln(String lineToWrite) {
         String eol = System.getProperty("line.separator");
         lineToWrite = lineToWrite + eol;
+        System.out.println("Writing " + lineToWrite);
         write(lineToWrite);
     }
 

@@ -25,7 +25,7 @@ public class WriteLineTest {
     public void writeMultipleLinesTest() {
         // Given
         String expected = "first line\nsecond line\nthird line\nfourth line";
-        for (String line : expected.split("\n")) {
+        for (String line : expected.split(System.getProperty("line.separator"))) {
 
             // When
             fileWriter.writeln(line);
